@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>471068062752-t9qpqkj7mcrobhc9041r9gj83mu0b9c7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.471068062752-t9qpqkj7mcrobhc9041r9gj83mu0b9c7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>471068062752-25p0he0gjv27e3pvs341804gn16vi9du.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC9Mzx1JTaur4OYytfTDG3Lve5i9WGXlMw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>471068062752</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ctech.youpass</string>
+	<key>PROJECT_ID</key>
+	<string>youpass</string>
+	<key>STORAGE_BUCKET</key>
+	<string>youpass.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:471068062752:ios:8b15c78e4cd11f0c71b845</string>
+	<key>DATABASE_URL</key>
+	<string>https://youpass.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "471068062752",
+    "firebase_url": "https://youpass.firebaseio.com",
+    "project_id": "youpass",
+    "storage_bucket": "youpass.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471068062752:android:1a563d0d1404f5c971b845",
+        "android_client_info": {
+          "package_name": "com.ctech.youpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "471068062752-25p0he0gjv27e3pvs341804gn16vi9du.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ctech.youpass",
+            "certificate_hash": "4792f6c5fec2c9c97accb63d14d433c1b5ef517e"
+          }
+        },
+        {
+          "client_id": "471068062752-9j6phqj7env3rjm3plmmr1eddqlabcp2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ctech.youpass",
+            "certificate_hash": "7e5e66dfe062e798c30bd955688947c01f7ccdde"
+          }
+        },
+        {
+          "client_id": "471068062752-mcse50gv8tuffbudu6m5vlfirrr3255h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ubD4-6anOKhrFyAozl301XTz00eQjL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "471068062752-d4itd71nqbiq63hqsoajqbnfak9cibj1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
