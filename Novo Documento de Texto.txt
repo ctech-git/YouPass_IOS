@@ -1,0 +1,13 @@
+     <Input autoCapitalize="none" autoCorrect={false} placeholder="Endereço de e-mail" value={email} onChangeText={setEmail} />
+                <Input autoCapitalize="none" autoCorrect={false} placeholder="Senha" value={password} onChangeText={setPassword} secureTextEntry />
+                {error ? (<InputError>{error}</InputError>) : (<></>)}
+
+                <TouchableWithoutFeedback onPress={() => nativeLogin()}>
+                    <ButtonStyled>
+                        <ButtonText>Entrar</ButtonText>
+                    </ButtonStyled>
+                </TouchableWithoutFeedback>
+                <ContainerButtonFacebook>
+                    <Icon name="facebook" color="white" size={15} />
+                    <FacebookButtonText onPress={() => handleFacebookLogin()}>Facebook</FacebookButtonText>
+                </ContainerButtonFacebook>
