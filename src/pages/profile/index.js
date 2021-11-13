@@ -70,38 +70,34 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
     function handlerCity(item) {
         SetCheckLoad(true);
         const response = api.get('/busca/alteraCity.php',
-            {
-                params: { token: token, city: item }
-            }).then(obj => {
+            { params: { token: token, city: item } }).then(obj => {
                 console.log(obj)
                 if (obj.status == 200) {
                     if (obj?.data == "1" || obj?.data == 1) {
-
                         var email = ""; var surname = ""; var codigo = ""; var favoritos = ""; var picture = ""; var cpf = "";
                         AsyncStorage.getItem('token').then(value => {
-                            if (value != null) {
+                            if (value != null && value != undefined) {
                                 var array = JSON.parse(value);
-                                email = array[0].email;
-                                cpf = array[0].cpf;
-                                surname = array[0].surname;
-                                codigo = array[0].codigo;
-                                favoritos = array[0].favoritos;
-                                picture = array[0].picture;
+                                email = array[0]?.email;
+                                cpf = array[0]?.cpf;
+                                surname = array[0]?.surname;
+                                codigo = array[0]?.codigo;
+                                favoritos = array[0]?.favoritos;
+                                picture = array[0]?.picture;
                                 var array2 = [];
                                 array2.push({ "codigo": codigo, "token": token, "name": name, "cidadeDeUso": item, "surname": surname, "email": email, "cpf": cpf, "picture": picture });
                                 AsyncStorage.setItem('token', JSON.stringify(array2));
-                                dispatch({ type: 'city', city: item })
                                 SetCheckLoad(false);
+                                dispatch({ type: 'city', city: item })
                             } else {
                                 var array2 = [];
                                 array2.push({ "codigo": false, "token": false, "name": false, "cidadeDeUso": item, "surname": false, "email": false, "cpf": false, "picture": false });
                                 AsyncStorage.setItem('token', JSON.stringify(array2));
-                                dispatch({ type: 'city', city: item })
                                 SetCheckLoad(false);
+                                dispatch({ type: 'city', city: item })
+
                             }
-
                         });
-
                     } else {
                         Toast.show('Error ao selecionar Cidade [BACK]', Toast.LONG);
                         SetCheckLoad(false);
@@ -112,7 +108,6 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
                 }
             }).catch(error => {
                 Toast.show('Error ao selecionar Cidade [CATCH ERROR]', Toast.LONG);
-
                 SetCheckLoad(false);
                 console.log(error);
             })
@@ -123,6 +118,7 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
         if (offset == -1) {
             SetCheckLoad(false);
         } else if (check_load) {
+            SetCheckLoad(false);
             return;
         } else {
             SetCheckLoad(true);
@@ -134,19 +130,21 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
                         city: city
                     }
                 }).then(obj => {
-
                     if (obj.data.length == 0) {
+                        Toast.show('Nenhum restaurante encontrado', Toast.LONG);
                         SetCheckLoad(false);
                         setOffset(-1);
                     } else {
                         var vetorRes = taxa == 'reset' ? (obj.data) : (dataAux3.concat(obj.data));
                         setdataAux3(vetorRes);
-                        SetCheckLoad(false);
                         setOffset(taxa == 'reset' ? (1) : (Number(offset) + 1));
                         SetscrollBegin(true);
+                        SetCheckLoad(false);
                     }
 
                 }).catch(error => {
+                    Toast.show('Error ao buscar restaurante [CATCH ERROR]', Toast.LONG);
+                    SetCheckLoad(false);
                     console.log(error);
                 })
         }
@@ -170,6 +168,7 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
                 console.log(error);
             })
     }
+
     function busca(item) {
         setCategoriaDispatch(item);
         navigation.navigate("Buscar");
@@ -256,7 +255,6 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
 
         var fotos = JSON.parse(item.fotoSlider);
         var dias = JSON.parse(item.dias);
-
         if ((favorito == "") || (favorito == null)) {
             setFavoritos(false);
         } else {
@@ -277,7 +275,6 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
             }
         }
         SetcategoriasG(catAux2);
-
         setdataItemFotos(fotos);
         setdataItemDias(dias);
         setRestauranteState(true);
@@ -301,43 +298,6 @@ function Profile({ city, token, favorito, navigation, check, dispatch, name, New
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-    function checkFilter(value) {
-        let type = value.label;
-        let status = value.checked;
-
-        if (type == "Todos" && status == true) {
-            setFilterTodos(true);
-            setFilterHoje(false);
-        } else if (type == "Abertos Hoje" && status == true) {
-            setFilterTodos(false);
-            setFilterHoje(true);
-        }
-    }
-    function checkFilter(value) {
-        let type = value.label;
-        let status = value.checked;
-
-        if (type == "Todos" && status == true) {
-            setFilterTodos(true);
-            setFilterHoje(false);
-        } else if (type == "Abertos Hoje" && status == true) {
-            setFilterTodos(false);
-            setFilterHoje(true);
-        }
-    }
-    function checkFilter(value) {
-        let type = value.label;
-        let status = value.checked;
-
-        if (type == "Todos" && status == true) {
-            setFilterTodos(true);
-            setFilterHoje(false);
-        } else if (type == "Abertos Hoje" && status == true) {
-            setFilterTodos(false);
-            setFilterHoje(true);
-        }
-    }
     function checkFilter(value) {
         let type = value.label;
         let status = value.checked;

@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 
 export const ContainerTitle = styled.View`
   alignItems: center;
+  marginBottom: 20px;
 `;
 
 export const TextTitle = styled.Text`

@@ -29,13 +29,16 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
     const [error, setError] = useState(false);
     const [modalPasswordState, setModalPasswordState] = useState(false);
     const [modalState2, setModalState2] = useState(false);
+
     function handleFacebookLogin() {
         LoginManager.logOut();
         if (Platform.OS === "android") {
             LoginManager.setLoginBehavior("web_only")
         }
+
         LoginManager.logInWithPermissions(['public_profile', 'email']).then(
             function (result) {
+                console.log(result)
                 if (result.isCancelled) {
                     console.log('Login cancelled')
                 } else {
@@ -205,7 +208,7 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
                     </TouchableHighlight>
                     <LogoLogin source={require('../../images/2.png')} />
                     <ContainerTitle>
-                        <TextTitle>Escolha Uma Forma de Login</TextTitle>
+                        <TextTitle>Faça login via E-mail</TextTitle>
                     </ContainerTitle>
                     <Input
                         autoCapitalize="none"
@@ -230,14 +233,14 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
                             <ButtonText>Entrar</ButtonText>
                         </ButtonStyled>
                     </Touch>
-                    <Touch onPress={() => handleFacebookLogin()}>
+                    {/* <Touch onPress={() => handleFacebookLogin()}>
                         <ContainerButtonFacebook>
                             <Icon name="facebook" color="white" size={30} />
                             <ButtonText style={{
                                 marginLeft: 20
                             }}>Facebook</ButtonText>
                         </ContainerButtonFacebook>
-                    </Touch>
+                    </Touch> */}
                     <SignUpLink>
                         <SignUpLinkText onPress={() => setModalPasswordState(true)}>
                             Recuperação de Senha!

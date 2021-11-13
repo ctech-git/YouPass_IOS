@@ -113,6 +113,8 @@ function ModalDados({ navigation, dispatch, token }) {
         props={{
           'checkCPF': checkCPF,
           'dados': dados,
+          'endereco': endereco,
+          'setEndereco': setEndereco,
           'setDados': setDados,
           'token': token
         }}

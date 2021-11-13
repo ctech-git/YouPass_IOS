@@ -64,7 +64,7 @@ export const CaixaPrincipal = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
 flex: 1;
-padding-bottom:40px;
+padding-bottom:30px;
 `;
 
 export const InputBusca = styled.TextInput`

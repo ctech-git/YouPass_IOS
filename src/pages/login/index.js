@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
     Platform, View, Modal, Linking, StyleSheet, TouchableHighlight,
-    TouchableNativeFeedback, TouchableWithoutFeedback
+    Alert, TouchableWithoutFeedback
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
@@ -13,6 +13,7 @@ import {
 } from './styles';
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin';
 import api from '../../services/api';
+import Loader from '../../util/loader';
 import ModalOutros from './Outros';
 import ModalFavoritos from './ModalFavoritos';
 import ModalIndique from './ModalIndique';
@@ -34,18 +35,16 @@ GoogleSignin.configure({
 function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, name, surname, email }) {
     const [modalOutrosState, setModalOutrosState] = useState(false);
     const [modalStatus, setModalStatus] = useState(false);
-    const [dadosUser, setdadosUser] = useState(false);
+    const [dadosUser, setdadosUser] = useState([]);
     const [modalFavoritosState, setModalFavoritosState] = useState(false);
-    const [modalFeedbackState, setModalFeedbackState] = useState(false);
-    const [modalFAQState, setModalFAQState] = useState(false);
     const [modalFuncionaState, setModalFuncionaState] = useState(false);
     const [modalIndiqueState, setModalIndiqueState] = useState(false);
     const [ModalCheckoutState, setModalCheckoutState] = useState(false);
     const [modalTermoState, setModalTermoState] = useState(false);
     const [dadosCompra, setdadosCompra] = useState(false);
-    const [error, setError] = useState(false);
     const [verifica, setVerifica] = useState(false);
-    const [voucher, setVoucher] = useState(false);
+    const [check_load, SetCheckLoad] = useState(false);
+
 
     useEffect(() => {
         init();
@@ -57,11 +56,29 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
     }
 
     async function init() {
-        if (token != "") {
+        SetCheckLoad(true)
+        if (token != "" && token != null && token != undefined) {
             setVerifica(true);
-            console.log(picture);
+            try {
+                const response = await api.get('/busca/buscaUser_New.php', { params: { token: token } })
+                    .then(data => {
+                        if (data.data == "0") {
+                            setdadosUser([])
+                            SetCheckLoad(false);
+                        } else {
+                            setdadosUser(data?.data)
+                            SetCheckLoad(false);
+                        }
+                    }).catch(error => {
+                        console.log(error);
+                        SetCheckLoad(false)
+                    })
+            } catch (error) {
+                console.log(error);
+            }
         } else {
             setVerifica(false);
+            SetCheckLoad(false)
         }
     }
 
@@ -249,8 +266,23 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
         }
     }
 
+    function getModalDados() {
+
+        if (dadosUser.cpf == null || dadosUser.cidade == null || dadosUser.bairro == null || dadosUser.genero == null || dadosUser.telefone == null) {
+            Alert.alert('Atenção', 'Finalize Seu Cadastro, Faltam Algumas Informações',
+                [{ text: 'OK', onPress: () => navigation.navigate("Dados") }], { cancelable: false });
+        } else {
+            if (isActive == 0) {
+                setModalCheckoutState(true)
+            } else {
+                setModalStatus(true)
+            }
+        }
+    }
     return (
         <>
+            <Loader loading={check_load} />
+
             {verifica ? (
                 <>
                     <Container2 style={styles.Teste}>
@@ -274,34 +306,30 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
 
                         <View style={{ marginTop: 25 }}>
                             <Cabecalho style={{ marginTop: 0 }}>Dados da Conta</Cabecalho>
-                            {voucher ? (<>  <TextTitle4>Você já é cliente</TextTitle4> </>) : (<>
-
-                                {isActive == 0 ? (
-                                    <Caixa onPress={() => setModalCheckoutState(true)}>
+                            {isActive == 0 ? (
+                                <Caixa onPress={() => getModalDados()}>
+                                    <Icon name="certificate" color="white" size={25} style={styles.iconCaixa} />
+                                    <TextTitle1>Selecionar Plano</TextTitle1>
+                                </Caixa>
+                            ) : (
+                                isActive == 1 ? (
+                                    <Caixa onPress={() => getModalDados()}>
                                         <Icon name="certificate" color="white" size={25} style={styles.iconCaixa} />
-                                        <TextTitle1>Selecionar Plano</TextTitle1>
+                                        <TextTitle1>Ver Plano</TextTitle1>
                                     </Caixa>
                                 ) : (
-                                    isActive == 1 ? (
-                                        <Caixa onPress={() => setModalStatus(true)}>
+                                    isActive == 2 ? (
+                                        <Caixa onPress={() => getModalDados()}>
                                             <Icon name="certificate" color="white" size={25} style={styles.iconCaixa} />
                                             <TextTitle1>Ver Plano</TextTitle1>
                                         </Caixa>
                                     ) : (
-                                        isActive == 2 ? (
-                                            <Caixa onPress={() => setModalStatus(true)}>
-                                                <Icon name="certificate" color="white" size={25} style={styles.iconCaixa} />
-                                                <TextTitle1>Ver Plano</TextTitle1>
-                                            </Caixa>
-                                        ) : (
-                                            <>
-                                            </>
-                                        )
+                                        <>
+                                        </>
                                     )
                                 )
-                                }
-                            </>
-                            )}
+                            )
+                            }
                             <Caixa onPress={() => Dados()}>
                                 <Icon name="user" color="white" size={25} style={styles.iconCaixa} />
                                 <TextTitle1>Dados Pessoais</TextTitle1>
@@ -343,7 +371,7 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                         <ModalFavoritos navigation={navigation} modalState={modalFavoritosState} setModalState={setModalFavoritosState} />
                         <ModalFunciona navigation={navigation} modalState={modalFuncionaState} setModalState={setModalFuncionaState} />
                         <ModalIndique cod={cod} navigation={navigation} modalState={modalIndiqueState} setModalState={setModalIndiqueState} />
-                        <ModalCheckout init={init} dadosUser={dadosUser} setdadosUser={setdadosUser} setModalStatus={setModalStatus} cod={cod} navigation={navigation} modalState={ModalCheckoutState} setModalState={setModalCheckoutState} />
+                        <ModalCheckout dadosUser={dadosUser} setdadosUser={setdadosUser} navigation={navigation} modalState={ModalCheckoutState} setModalState={setModalCheckoutState} />
                         <ModalStatus token={token} setModalState2={setModalCheckoutState} setdadosCompra={setdadosCompra} dadosCompra={dadosCompra} dadosUser={dadosUser} setdadosUser={setdadosUser} navigation={navigation} modalState={modalStatus} setModalState={setModalStatus} />
                         <ModalTermo navigation={navigation} modalState={modalTermoState} setModalState={setModalTermoState} />
                     </Container2>

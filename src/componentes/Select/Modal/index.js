@@ -80,10 +80,11 @@ const styles = StyleSheet.create({
   base: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: '90%'
+    height: '90%',
+    marginTop: 20
   },
   header: {
-    height: '15%',
+    height: '30%',
     marginLeft: '5%',
     flexDirection: 'row',
     justifyContent: 'flex-start',
@@ -93,10 +94,10 @@ const styles = StyleSheet.create({
 
   },
   container: {
-    width: '70%',
-    marginLeft: '15%',
-    marginTop: '25%',
-    height: '50%',
+    width: '75%',
+    marginLeft: '12.5%',
+    marginTop: '40%',
+    height: '40%',
     backgroundColor: 'white',
     borderRadius: 30,
   }

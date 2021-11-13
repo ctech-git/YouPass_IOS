@@ -12,26 +12,28 @@ import Loader from '../../../util/loader';
 import Toast from 'react-native-simple-toast';
 
 
-function ComponentEndereco({ dados, setDados, token }) {
+function ComponentEndereco({ endereco, setEndereco, token }) {
   const [check_load, SetCheckLoad] = useState(false);
 
-  const handlerCep = (e) => { setDados(prev => ({ ...prev, cepAtual: e })) }
-  const handlerRua = (e) => { setDados(prev => ({ ...prev, ruaAtual: e })) }
-  const handlerComplemento = (e) => { setDados(prev => ({ ...prev, complementoAtual: e })) }
-  const handlerBairro = (e) => { setDados(prev => ({ ...prev, bairroAtual: e })) }
+  const handlerCep = (e) => { setEndereco(prev => ({ ...prev, cepAtual: e })) }
+  const handlerRua = (e) => { setEndereco(prev => ({ ...prev, ruaAtual: e })) }
+  const handlerComplemento = (e) => { setEndereco(prev => ({ ...prev, complementoAtual: e })) }
+  const handlerBairro = (e) => { setEndereco(prev => ({ ...prev, bairroAtual: e })) }
   const [VetorBairro, setVetorBairro] = useState([]);
 
   useEffect(() => {
-
+    console.log("===========")
+    console.log(endereco)
+    console.log("===========")
     getBairros();
 
-  }, [dados.cidadeAtual])
+  }, [endereco.cidadeAtual])
 
   async function getBairros() {
-    console.log(dados.cidadeAtual)
+    console.log(endereco.cidadeAtual)
     SetCheckLoad(true);
     const response = await api.get('/busca/BuscaBairro.php',
-      { params: { cidade: dados.cidadeAtual ? (dados.cidadeAtual) : (0) } })
+      { params: { cidade: endereco.cidadeAtual ? (endereco.cidadeAtual) : (0) } })
       .then(data => {
 
         if (data.status == 200) {
@@ -44,6 +46,7 @@ function ComponentEndereco({ dados, setDados, token }) {
             dados?.map((item) => {
               aux.push({ label: item.nome, value: item.id });
             })
+            console.log(aux)
             setVetorBairro(aux);
             SetCheckLoad(false);
           }
@@ -57,24 +60,24 @@ function ComponentEndereco({ dados, setDados, token }) {
 
   async function handlerCidade(e) {
     SetCheckLoad(true)
-    setDados(prev => ({ ...prev, cidadeAtual: e }))
+    setEndereco(prev => ({ ...prev, cidadeAtual: e }))
     getBairros();
     SetCheckLoad(false)
   }
 
   async function onSave() {
-    console.log(dados);
+    console.log(endereco);
     SetCheckLoad(true)
     try {
       const response = await api.get('/busca/salvaDados_new.php', {
         params: {
           token: token,
           type: "endereco",
-          cepAtual: dados?.cepAtual,
-          ruaAtual: dados?.ruaAtual,
-          complementoAtual: dados?.complementoAtual,
-          bairroAtual: dados?.bairroAtual,
-          cidadeAtual: dados?.cidadeAtual
+          cepAtual: endereco?.cepAtual,
+          ruaAtual: endereco?.ruaAtual,
+          complementoAtual: endereco?.complementoAtual,
+          bairroAtual: endereco?.bairroAtual,
+          cidadeAtual: endereco?.cidadeAtual
         }
       })
         .then(data => {
@@ -111,21 +114,21 @@ function ComponentEndereco({ dados, setDados, token }) {
         <Input
           text="CEP"
           placeholder='68500-000'
-          value={dados.cepAtual}
+          value={endereco?.cepAtual}
           onChange={handlerCep}
           placeholderTextColor="#808080"
         />
         <Input
           text="Logradouro"
           placeholder='Rua ...'
-          value={dados.ruaAtual}
+          value={endereco?.ruaAtual}
           onChange={handlerRua}
           placeholderTextColor="#808080"
         />
         <Input
           text="Complemento"
           placeholder='Proximo a ...'
-          value={dados.complementoAtual}
+          value={endereco?.complementoAtual}
           onChange={handlerComplemento}
           placeholderTextColor="#808080"
         />
@@ -133,15 +136,11 @@ function ComponentEndereco({ dados, setDados, token }) {
           <Text style={styles.placeholder}>Cidade</Text>
           <Select
             text="Cidade"
-            placeholder={{
-              label: 'Selecione a Cidade...',
-              value: null,
-            }}
             onChange={handlerCidade}
-            value={dados.cidadeAtual}
+            value={endereco?.cidadeAtual}
             items={[
-              { label: 'Belém', value: 1 },
-              { label: 'Marabá', value: 2 },
+              { label: 'Belém', value: '1' },
+              { label: 'Marabá', value: '2' },
             ]}
           />
         </CaixaDados>
@@ -149,12 +148,8 @@ function ComponentEndereco({ dados, setDados, token }) {
           <Text style={styles.placeholder}>Bairro</Text>
           <Select
             text="Bairro"
-            placeholder={{
-              label: 'Selecione o Bairro...',
-              value: null,
-            }}
             onChange={handlerBairro}
-            value={dados.bairroAtual}
+            value={endereco?.bairroAtual}
             items={VetorBairro ? (VetorBairro) : ([])}
           />
         </CaixaDados>
