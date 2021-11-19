@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
     Platform, View, Modal, Linking, StyleSheet, TouchableHighlight,
-    Alert, TouchableWithoutFeedback
+    Alert, TouchableWithoutFeedback, Text
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
@@ -9,7 +9,7 @@ import {
     ButtonStyled2, ButtonText2, ButtonText, Container, ContainerButtonGoogle,
     ContainerLogin, GoogleButtonText, ImageGoogleIcon, Logo,
     Logo2, TextTitle3, Cabecalho, Container2, TextosContainer, TextTitle2, TextTitle4,
-    Caixa, TextTitle1, Touch, ContainerButtonApple
+    Caixa, TextTitle1, ContainerButtonApple
 } from './styles';
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin';
 import api from '../../services/api';
@@ -82,6 +82,10 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
             setVerifica(false);
             SetCheckLoad(false)
         }
+
+        console.log("=====")
+        console.log(verifica)
+
     }
 
     async function Dados() {
@@ -384,6 +388,7 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                     </Container2>
                 </>
             ) : (
+
                 <ContainerLogin>
                     <Container>
                         <Logo source={require('../../images/youpass.png')} resizeMode="contain" />
@@ -394,19 +399,19 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                             </ContainerButtonGoogle>
                         </TouchableHighlight >
                         {Platform.OS === 'ios' ? (
-                            <Touch onPress={() => onAppleButtonPress()}>
-                                <ContainerButtonApple
-                                >
+                            <TouchableHighlight onPress={() => onAppleButtonPress()}>
+                                <ContainerButtonApple>
                                     <Icon name="apple" color="black" size={30} />
                                     <ButtonText style={{
                                         marginLeft: 20, color: "black", fontSize: 20
                                     }}>Sign in with Apple</ButtonText>
                                 </ContainerButtonApple>
-                            </Touch>
+                            </TouchableHighlight >
+
+
                         ) : (
                             <></>
-                        )
-                        }
+                        )}
                         <TouchableHighlight onPress={() => setModalOutrosState(true)}>
                             <ButtonStyled2>
                                 <ButtonText2>Outros</ButtonText2>

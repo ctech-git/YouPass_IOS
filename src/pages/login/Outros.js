@@ -213,6 +213,9 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
                         placeholder="Endereço de e-mail"
                         value={email}
                         onChangeText={setEmail}
+                        placeholderTextColor="#808080"
+                        labelStyle={{ color: "#808080" }}
+                        inputStyle={{ color: '#808080' }}
                     />
                     <Input
                         autoCapitalize="none"
@@ -220,6 +223,9 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
                         placeholder="Senha"
                         value={password}
                         onChangeText={setPassword} secureTextEntry
+                        placeholderTextColor="#808080"
+                        labelStyle={{ color: "#808080" }}
+                        inputStyle={{ color: '#808080' }}
                     />
                     {error ? (
                         <View style={{ justifyContent: 'center', flexDirection: 'row' }}>

@@ -134,6 +134,7 @@ export const InputBusca = styled.TextInput`
   alignItems: center;
   justifyContent: center;
   textAlign: center;
+  color: #808080;
 `;
 export const TextosContainer2 = styled.View`
 flexDirection: row;

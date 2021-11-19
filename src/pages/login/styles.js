@@ -318,7 +318,17 @@ export const FacebookButtonText = styled.Text`
     padding-left: 10px;
     font-weight: bold;
 `;
-
+export const ContainerButtonApple = styled.View`
+  flex: 1;
+  flex-direction: row;
+  alignItems: center;
+  justifyContent: center;
+  borderRadius: 5px;
+  background-color: white;
+  min-width: 80%;
+  max-height: 60px;
+  marginTop: 10px;
+`;
 export const ContainerButtonGoogle = styled.View`
   flex: 1;
   flex-direction: row;
