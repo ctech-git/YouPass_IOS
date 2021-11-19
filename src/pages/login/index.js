@@ -21,6 +21,7 @@ import ModalCheckout from './ModalCheckout';
 import ModalStatus from './ModalStatus';
 import ModalFunciona from './ModalFunciona';
 import ModalTermo from './ModalTermo';
+import ModalInfo from './ModalInfo';
 import { connect } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage'
 import Toast from 'react-native-simple-toast';
@@ -41,6 +42,7 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
     const [modalIndiqueState, setModalIndiqueState] = useState(false);
     const [ModalCheckoutState, setModalCheckoutState] = useState(false);
     const [modalTermoState, setModalTermoState] = useState(false);
+    const [modalInfoState, setModalInfoState] = useState(false);
     const [dadosCompra, setdadosCompra] = useState(false);
     const [verifica, setVerifica] = useState(false);
     const [check_load, SetCheckLoad] = useState(false);
@@ -366,6 +368,10 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                                 <Icon name="comments" color="white" size={25} style={styles.iconCaixa} />
                                 <TextTitle1>Central de Atendimento</TextTitle1>
                             </Caixa>
+                            <Caixa onPress={() => setModalInfoState(true)}>
+                                <Icon name="info" color="white" size={25} style={styles.iconCaixa2} />
+                                <TextTitle1>Sobre o App</TextTitle1>
+                            </Caixa>
                         </View>
 
                         <ModalFavoritos navigation={navigation} modalState={modalFavoritosState} setModalState={setModalFavoritosState} />
@@ -374,6 +380,7 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                         <ModalCheckout dadosUser={dadosUser} setdadosUser={setdadosUser} navigation={navigation} modalState={ModalCheckoutState} setModalState={setModalCheckoutState} />
                         <ModalStatus token={token} setModalState2={setModalCheckoutState} setdadosCompra={setdadosCompra} dadosCompra={dadosCompra} dadosUser={dadosUser} setdadosUser={setdadosUser} navigation={navigation} modalState={modalStatus} setModalState={setModalStatus} />
                         <ModalTermo navigation={navigation} modalState={modalTermoState} setModalState={setModalTermoState} />
+                        <ModalInfo navigation={navigation} modalState={modalInfoState} setModalState={setModalInfoState} />
                     </Container2>
                 </>
             ) : (
@@ -426,6 +433,9 @@ const styles = StyleSheet.create({
     },
     iconCaixa: {
         marginLeft: 10
+    },
+    iconCaixa2: {
+        marginLeft: 20
     },
     buttonClose: {
         flexDirection: "row",
