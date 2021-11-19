@@ -12,17 +12,14 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2BB219E94D5444F0D3165280 /* libPods-login-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA93DFE1E1287BA2A53819E /* libPods-login-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* loginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* loginTests.m */; };
-		7D4F255845D8A1DD3B0F959E /* libPods-login.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AE10D3933E446931324A0D /* libPods-login.a */; };
-		81EE7BBFDC05D3ABCED1A332 /* libPods-login-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4081FF6ECFE88678C73F5EFF /* libPods-login-tvOS.a */; };
-		8F916E7D19FC88881CAE6C08 /* libPods-login-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BC1A52FD208D44EDC99109 /* libPods-login-OneSignalNotificationServiceExtension.a */; };
-		E1BA4FB0DC5526A764601865 /* libPods-login-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A05F2960C3FB0783299DE240 /* libPods-login-tvOSTests.a */; };
-		F3ED705CE964C5B7A1E620FA /* libPods-loginTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA47693210B891D21D7A1ED9 /* libPods-loginTests.a */; };
-		FDBEB63F25F033B700A12830 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBEB63E25F033B700A12830 /* NotificationService.swift */; };
-		FDBEB64325F033B700A12830 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FDBEB63C25F033B700A12830 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		81C3F5E7835D8EF3060108AA /* libPods-login-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D43CBAFFA95D57F9B68E269 /* libPods-login-tvOS.a */; };
+		83984178806673D0C4427FC4 /* libPods-login.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5A9CBCE882EEB3D4256FB0 /* libPods-login.a */; };
+		84D9283A2F15A5C37FEB2847 /* libPods-loginTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B9D41DD192A05FFC610D76 /* libPods-loginTests.a */; };
 		FDEC165826E1696B00910372 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDEC165726E1696B00910372 /* GoogleService-Info.plist */; };
 		FDEC165926E1696B00910372 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDEC165726E1696B00910372 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -42,13 +39,6 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "login-tvOS";
 		};
-		FDBEB64125F033B700A12830 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FDBEB63B25F033B700A12830;
-			remoteInfo = OneSignalNotificationServiceExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FDBEB64325F033B700A12830 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,33 +66,27 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = login/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = login/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = login/main.m; sourceTree = "<group>"; };
-		1A726B29B7E9C92B662A28F0 /* Pods-login-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-login-tvOS/Pods-login-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2AA93DFE1E1287BA2A53819E /* libPods-login-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* login-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "login-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* login-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "login-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CD28983A8EE250CEBAA395A /* Pods-login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login.debug.xcconfig"; path = "Target Support Files/Pods-login/Pods-login.debug.xcconfig"; sourceTree = "<group>"; };
-		4081FF6ECFE88678C73F5EFF /* libPods-login-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60BC1A52FD208D44EDC99109 /* libPods-login-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		767EC991B059B89B122A0E55 /* Pods-login-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-login-OneSignalNotificationServiceExtension/Pods-login-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
-		7C98A4FA4A17F28D2B47D185 /* Pods-login-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-login-tvOSTests/Pods-login-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		86ACE380AEFE138AE0D74091 /* Pods-loginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginTests.release.xcconfig"; path = "Target Support Files/Pods-loginTests/Pods-loginTests.release.xcconfig"; sourceTree = "<group>"; };
-		A05F2960C3FB0783299DE240 /* libPods-login-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF2D235AF1B45D09B35F24A6 /* Pods-loginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginTests.debug.xcconfig"; path = "Target Support Files/Pods-loginTests/Pods-loginTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C1AE10D3933E446931324A0D /* libPods-login.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D152D95CB6D8DEF4509DCAC1 /* Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-login-OneSignalNotificationServiceExtension/Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		D5E8A2877C2B757789577E2D /* Pods-login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login.release.xcconfig"; path = "Target Support Files/Pods-login/Pods-login.release.xcconfig"; sourceTree = "<group>"; };
-		DA47693210B891D21D7A1ED9 /* libPods-loginTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-loginTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B9D41DD192A05FFC610D76 /* libPods-loginTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-loginTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2AE2DF4019B6E02CB06C75 /* libPods-login-OneSignalNotificationServiceExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login-OneSignalNotificationServiceExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA8669D2860B56970B01B97 /* Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-login-OneSignalNotificationServiceExtension/Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		60EC829DD01D7EF6B3240034 /* Pods-login-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-login-tvOSTests/Pods-login-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6DEE64C5A62F3626985CF68D /* Pods-login-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-login-tvOSTests/Pods-login-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A5BAE9AA1A7E194B302332D /* Pods-login-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-login-OneSignalNotificationServiceExtension/Pods-login-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		88443B0BE5903D87BB4C8A59 /* Pods-login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login.debug.xcconfig"; path = "Target Support Files/Pods-login/Pods-login.debug.xcconfig"; sourceTree = "<group>"; };
+		9693307BF909AED9B3013843 /* Pods-login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login.release.xcconfig"; path = "Target Support Files/Pods-login/Pods-login.release.xcconfig"; sourceTree = "<group>"; };
+		9D43CBAFFA95D57F9B68E269 /* libPods-login-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD864D22A0EA4964F09C31CF /* Pods-loginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginTests.release.xcconfig"; path = "Target Support Files/Pods-loginTests/Pods-loginTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAD5E704C6F3BC2E109F30C3 /* Pods-loginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginTests.debug.xcconfig"; path = "Target Support Files/Pods-loginTests/Pods-loginTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DADCA96C80201F23C8FBC3CF /* Pods-login-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-login-tvOS/Pods-login-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EE80DDFD22063A98B88CA305 /* Pods-login-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-login-tvOSTests/Pods-login-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		F8D223DE7DB1C149A85B3071 /* Pods-login-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOS.release.xcconfig"; path = "Target Support Files/Pods-login-tvOS/Pods-login-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		ED5A9CBCE882EEB3D4256FB0 /* libPods-login.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-login.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F498ED51011F5290AFFDCC64 /* Pods-login-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-login-tvOS.release.xcconfig"; path = "Target Support Files/Pods-login-tvOS/Pods-login-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		FD0897F7252BA7BF0096C7F6 /* login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = login.entitlements; path = login/login.entitlements; sourceTree = "<group>"; };
-		FDBEB62525F0337F00A12830 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		FDBEB62725F0337F00A12830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDBEB63C25F033B700A12830 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDBEB63E25F033B700A12830 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		FDBEB64025F033B700A12830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDEC165726E1696B00910372 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FDF10A2E25F118830057FB5B /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4F255845D8A1DD3B0F959E /* libPods-login.a in Frameworks */,
+				83984178806673D0C4427FC4 /* libPods-login.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81EE7BBFDC05D3ABCED1A332 /* libPods-login-tvOS.a in Frameworks */,
+				81C3F5E7835D8EF3060108AA /* libPods-login-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1BA4FB0DC5526A764601865 /* libPods-login-tvOSTests.a in Frameworks */,
+				2BB219E94D5444F0D3165280 /* libPods-login-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,15 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3ED705CE964C5B7A1E620FA /* libPods-loginTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FDBEB63925F033B700A12830 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8F916E7D19FC88881CAE6C08 /* libPods-login-OneSignalNotificationServiceExtension.a in Frameworks */,
+				84D9283A2F15A5C37FEB2847 /* libPods-loginTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,16 +145,16 @@
 		09F048761E379962EFBBA099 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3CD28983A8EE250CEBAA395A /* Pods-login.debug.xcconfig */,
-				D5E8A2877C2B757789577E2D /* Pods-login.release.xcconfig */,
-				D152D95CB6D8DEF4509DCAC1 /* Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig */,
-				767EC991B059B89B122A0E55 /* Pods-login-OneSignalNotificationServiceExtension.release.xcconfig */,
-				1A726B29B7E9C92B662A28F0 /* Pods-login-tvOS.debug.xcconfig */,
-				F8D223DE7DB1C149A85B3071 /* Pods-login-tvOS.release.xcconfig */,
-				7C98A4FA4A17F28D2B47D185 /* Pods-login-tvOSTests.debug.xcconfig */,
-				EE80DDFD22063A98B88CA305 /* Pods-login-tvOSTests.release.xcconfig */,
-				BF2D235AF1B45D09B35F24A6 /* Pods-loginTests.debug.xcconfig */,
-				86ACE380AEFE138AE0D74091 /* Pods-loginTests.release.xcconfig */,
+				88443B0BE5903D87BB4C8A59 /* Pods-login.debug.xcconfig */,
+				9693307BF909AED9B3013843 /* Pods-login.release.xcconfig */,
+				5AA8669D2860B56970B01B97 /* Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				7A5BAE9AA1A7E194B302332D /* Pods-login-OneSignalNotificationServiceExtension.release.xcconfig */,
+				DADCA96C80201F23C8FBC3CF /* Pods-login-tvOS.debug.xcconfig */,
+				F498ED51011F5290AFFDCC64 /* Pods-login-tvOS.release.xcconfig */,
+				60EC829DD01D7EF6B3240034 /* Pods-login-tvOSTests.debug.xcconfig */,
+				6DEE64C5A62F3626985CF68D /* Pods-login-tvOSTests.release.xcconfig */,
+				CAD5E704C6F3BC2E109F30C3 /* Pods-loginTests.debug.xcconfig */,
+				BD864D22A0EA4964F09C31CF /* Pods-loginTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -205,11 +180,11 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				C1AE10D3933E446931324A0D /* libPods-login.a */,
-				60BC1A52FD208D44EDC99109 /* libPods-login-OneSignalNotificationServiceExtension.a */,
-				4081FF6ECFE88678C73F5EFF /* libPods-login-tvOS.a */,
-				A05F2960C3FB0783299DE240 /* libPods-login-tvOSTests.a */,
-				DA47693210B891D21D7A1ED9 /* libPods-loginTests.a */,
+				ED5A9CBCE882EEB3D4256FB0 /* libPods-login.a */,
+				4A2AE2DF4019B6E02CB06C75 /* libPods-login-OneSignalNotificationServiceExtension.a */,
+				9D43CBAFFA95D57F9B68E269 /* libPods-login-tvOS.a */,
+				2AA93DFE1E1287BA2A53819E /* libPods-login-tvOSTests.a */,
+				30B9D41DD192A05FFC610D76 /* libPods-loginTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,8 +202,6 @@
 				13B07FAE1A68108700A75B9A /* login */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* loginTests */,
-				FDBEB62425F0337F00A12830 /* OneSignalNotificationServiceExtension */,
-				FDBEB63D25F033B700A12830 /* OneSignalNotificationServiceExtension */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				09F048761E379962EFBBA099 /* Pods */,
@@ -245,28 +218,8 @@
 				00E356EE1AD99517003FC87E /* loginTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* login-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* login-tvOSTests.xctest */,
-				FDBEB63C25F033B700A12830 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FDBEB62425F0337F00A12830 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				FDF10A2E25F118830057FB5B /* OneSignalNotificationServiceExtension.entitlements */,
-				FDBEB62525F0337F00A12830 /* NotificationService.swift */,
-				FDBEB62725F0337F00A12830 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
-			sourceTree = "<group>";
-		};
-		FDBEB63D25F033B700A12830 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				FDBEB63E25F033B700A12830 /* NotificationService.swift */,
-				FDBEB64025F033B700A12830 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "loginTests" */;
 			buildPhases = (
-				B1A8578F2F796F8CFAFE07B5 /* [CP] Check Pods Manifest.lock */,
+				4DA5676105360E0AF19B132D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				75EBAE110A7F41F1AAB991A1 /* Frameworks */,
@@ -295,19 +248,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "login" */;
 			buildPhases = (
-				A72A24EC9595D0895ECC61DC /* [CP] Check Pods Manifest.lock */,
+				34DC9E18FC95C5B9BB28B8A2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				FDBEB62E25F0337F00A12830 /* Embed App Extensions */,
-				3AEB8F1CA8402D1344EB1762 /* [CP] Copy Pods Resources */,
+				9A413F317C9BCEBE794F5590 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FDBEB64225F033B700A12830 /* PBXTargetDependency */,
 			);
 			name = login;
 			productName = login;
@@ -318,7 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "login-tvOS" */;
 			buildPhases = (
-				211174DB56B5D53BED8B24CD /* [CP] Check Pods Manifest.lock */,
+				C5CCCBD7B6A1AD960D0513F9 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -338,7 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "login-tvOSTests" */;
 			buildPhases = (
-				B71AF4FAC283F0CD6E57EDD7 /* [CP] Check Pods Manifest.lock */,
+				DA266278EF0BB3C6800A399C /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -352,25 +304,6 @@
 			productName = "login-tvOSTests";
 			productReference = 2D02E4901E0B4A5D006451C7 /* login-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FDBEB63B25F033B700A12830 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FDBEB64425F033B700A12830 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
-			buildPhases = (
-				6E967D03BB6BBD3E1BBEDFF5 /* [CP] Check Pods Manifest.lock */,
-				FDBEB63825F033B700A12830 /* Sources */,
-				FDBEB63925F033B700A12830 /* Frameworks */,
-				FDBEB63A25F033B700A12830 /* Resources */,
-				BB9C5860A5B44CB0A36FDC98 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OneSignalNotificationServiceExtension;
-			productName = OneSignalNotificationServiceExtension;
-			productReference = FDBEB63C25F033B700A12830 /* OneSignalNotificationServiceExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -401,11 +334,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
-					FDBEB63B25F033B700A12830 = {
-						CreatedOnToolsVersion = 12.4;
-						DevelopmentTeam = 2X6DJUYUU8;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "login" */;
@@ -425,7 +353,6 @@
 				00E356ED1AD99517003FC87E /* loginTests */,
 				2D02E47A1E0B4A5D006451C7 /* login-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* login-tvOSTests */,
-				FDBEB63B25F033B700A12830 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -464,13 +391,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDBEB63A25F033B700A12830 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -488,28 +408,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		211174DB56B5D53BED8B24CD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-login-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,7 +422,51 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		3AEB8F1CA8402D1344EB1762 /* [CP] Copy Pods Resources */ = {
+		34DC9E18FC95C5B9BB28B8A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-login-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DA5676105360E0AF19B132D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-loginTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A413F317C9BCEBE794F5590 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -576,7 +518,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-login/Pods-login-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E967D03BB6BBD3E1BBEDFF5 /* [CP] Check Pods Manifest.lock */ = {
+		C5CCCBD7B6A1AD960D0513F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -591,58 +533,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-login-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-login-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A72A24EC9595D0895ECC61DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-login-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1A8578F2F796F8CFAFE07B5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-loginTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B71AF4FAC283F0CD6E57EDD7 /* [CP] Check Pods Manifest.lock */ = {
+		DA266278EF0BB3C6800A399C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -662,58 +560,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB9C5860A5B44CB0A36FDC98 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-login-OneSignalNotificationServiceExtension/Pods-login-OneSignalNotificationServiceExtension-resources.sh",
-				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-login-OneSignalNotificationServiceExtension/Pods-login-OneSignalNotificationServiceExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -791,14 +637,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDBEB63825F033B700A12830 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FDBEB63F25F033B700A12830 /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -811,11 +649,6 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* login-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
-		};
-		FDBEB64225F033B700A12830 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FDBEB63B25F033B700A12830 /* OneSignalNotificationServiceExtension */;
-			targetProxy = FDBEB64125F033B700A12830 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -834,7 +667,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF2D235AF1B45D09B35F24A6 /* Pods-loginTests.debug.xcconfig */;
+			baseConfigurationReference = CAD5E704C6F3BC2E109F30C3 /* Pods-loginTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 2X6DJUYUU8;
@@ -858,7 +691,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86ACE380AEFE138AE0D74091 /* Pods-loginTests.release.xcconfig */;
+			baseConfigurationReference = BD864D22A0EA4964F09C31CF /* Pods-loginTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -879,7 +712,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CD28983A8EE250CEBAA395A /* Pods-login.debug.xcconfig */;
+			baseConfigurationReference = 88443B0BE5903D87BB4C8A59 /* Pods-login.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -911,7 +744,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5E8A2877C2B757789577E2D /* Pods-login.release.xcconfig */;
+			baseConfigurationReference = 9693307BF909AED9B3013843 /* Pods-login.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -942,7 +775,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A726B29B7E9C92B662A28F0 /* Pods-login-tvOS.debug.xcconfig */;
+			baseConfigurationReference = DADCA96C80201F23C8FBC3CF /* Pods-login-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -971,7 +804,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8D223DE7DB1C149A85B3071 /* Pods-login-tvOS.release.xcconfig */;
+			baseConfigurationReference = F498ED51011F5290AFFDCC64 /* Pods-login-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1000,7 +833,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C98A4FA4A17F28D2B47D185 /* Pods-login-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 60EC829DD01D7EF6B3240034 /* Pods-login-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1028,7 +861,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE80DDFD22063A98B88CA305 /* Pods-login-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 6DEE64C5A62F3626985CF68D /* Pods-login-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1161,71 +994,6 @@
 			};
 			name = Release;
 		};
-		FDBEB64525F033B700A12830 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D152D95CB6D8DEF4509DCAC1 /* Pods-login-OneSignalNotificationServiceExtension.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 2X6DJUYUU8;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.3.4;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ctech.youpass.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		FDBEB64625F033B700A12830 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 767EC991B059B89B122A0E55 /* Pods-login-OneSignalNotificationServiceExtension.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 25;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2X6DJUYUU8;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.3.4;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ctech.youpass.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1270,15 +1038,6 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FDBEB64425F033B700A12830 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FDBEB64525F033B700A12830 /* Debug */,
-				FDBEB64625F033B700A12830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

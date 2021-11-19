@@ -19,7 +19,6 @@ import { connect } from 'react-redux';
 import { ScrollView, TouchableNativeFeedback } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Toast from 'react-native-simple-toast';
-import OneSignal from 'react-native-onesignal';
 
 let user = null;
 
@@ -98,7 +97,6 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
                         var email = data?.data?.email;
                         var cidadeDeUso = data?.data?.cidadeDeUso;
                         var codigo = data?.data?.id;
-                        OneSignal.setExternalUserId(data?.data?.id);
 
                         var cpf = data?.data?.cpf;
                         var picture = data?.data?.picture;
@@ -152,7 +150,6 @@ function ModalOutros({ navigation, modalState, setModalState, dispatch }) {
                         var cidadeDeUso = data?.data?.cidadeDeUso;
                         var favoritos = data?.data?.favoritos;
                         var codigo = data?.data?.id;
-                        OneSignal.setExternalUserId(data?.data?.id);
 
                         var array = [];
 

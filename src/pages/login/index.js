@@ -24,7 +24,7 @@ import ModalTermo from './ModalTermo';
 import { connect } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage'
 import Toast from 'react-native-simple-toast';
-import OneSignal from 'react-native-onesignal';
+
 import { appleAuth, AppleAuthError } from '@invertase/react-native-apple-authentication';
 
 GoogleSignin.configure({
@@ -149,7 +149,7 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                             var favoritos = data.data.favoritos;
                             var cidadeDeUso = data.data.cidadeDeUso;
                             var codigo = data.data.id;
-                            OneSignal.setExternalUserId(data.data.id);
+
                             var array = [];
 
                             array.push({
@@ -228,7 +228,7 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                         var favoritos = data.data.favoritos;
                         var cidadeDeUso = data.data.cidadeDeUso;
                         var codigo = data.data.id;
-                        OneSignal.setExternalUserId(data.data.id);
+
                         var array = [];
 
                         array.push({
@@ -378,7 +378,6 @@ function Login({ picture, isActive, favorito, cod, navigation, dispatch, token, 
                 </>
             ) : (
                 <ContainerLogin>
-
                     <Container>
                         <Logo source={require('../../images/youpass.png')} resizeMode="contain" />
                         <TouchableHighlight onPress={() => signInGoogle()}>

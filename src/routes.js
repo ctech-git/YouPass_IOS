@@ -13,7 +13,7 @@ import Notificacao from './pages/notificacao';
 import Dados from './pages/dados';
 import AsyncStorage from '@react-native-community/async-storage'
 import api from './services/api';
-import OneSignal from 'react-native-onesignal';
+
 import PushNotification from './pages/util/pushNotification.js';
 
 function Routes({ dispatch }) {
@@ -44,7 +44,7 @@ function Routes({ dispatch }) {
           email = array[0].email;
           surname = array[0].surname;
           codigo = array[0].codigo;
-          OneSignal.setExternalUserId(codigo);
+
           name = array[0].name;
           favoritos = array[0].favoritos;
           picture = array[0].picture;
@@ -68,14 +68,7 @@ function Routes({ dispatch }) {
       }
     });
     /////////////////////////////////////////////////////////////////////
-    OneSignal.setLogLevel(6, 0);
-    OneSignal.inFocusDisplaying(2);
-    // set kOSSettingsKeyAutoPrompt to false prompting manually on iOS
-    OneSignal.init("094eadec-eafb-4112-a5a7-a5da2b38bf6e", { kOSSettingsKeyAutoPrompt: true, kOSSettingsKeyInFocusDisplayOption: 2 });
-    OneSignal.setSubscription(true);
-    OneSignal.addEventListener('received', onReceived);
-    OneSignal.addEventListener('ids', onIds);
-    OneSignal.addEventListener('opened', onOpened);
+
     /////////////////////////////////////////////////////////////////////
   }, []);
 
