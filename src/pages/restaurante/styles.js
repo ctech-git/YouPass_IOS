@@ -61,6 +61,14 @@ export const Legends2 = styled.Text`
   padding-left:20px;
 
 `;
+
+export const LegendsYellow = styled.Text`
+  font-size: 16px;
+  color: yellow;
+  padding-left:20px;
+  font-weight:bold;
+
+`;
 export const Legends22 = styled.Text`
   font-size: 16px;
   color: white;

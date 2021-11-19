@@ -238,19 +238,19 @@ function Restaurante({ categoriasGeral, dispatch, chave,
 
                 renderFixedHeader={() => (
                     <View key="fixed-header" style={styles.fixedSection}>
-                        <Icon name="arrow-left" size={25} color="white" style={{
+                        <Icon name="arrow-left" size={22} color="white" style={{
                             marginRight: 15,
-                            paddingTop: Platform.OS === 'ios' ? 20 : 0
+                            paddingTop: Platform.OS === 'ios' ? 30 : 0
                         }} onPress={() => { setModalState(false) }} />
                         {favoritos ? (
-                            <Icon name="heart" size={25} color="white" style={{
+                            <Icon name="heart" size={22} color="white" style={{
                                 marginRight: 15,
-                                paddingTop: Platform.OS === 'ios' ? 20 : 0
+                                paddingTop: Platform.OS === 'ios' ? 30 : 0
                             }} onPress={() => { desfavoritar() }} />
                         ) : (
-                            <Icon name="heart-o" size={25} color="white" style={{
+                            <Icon name="heart-o" size={22} color="white" style={{
                                 marginRight: 15,
-                                paddingTop: Platform.OS === 'ios' ? 20 : 0
+                                paddingTop: Platform.OS === 'ios' ? 30 : 0
                             }} onPress={() => { favoritar() }} />
                         )}
                     </View>
