@@ -1,7 +1,7 @@
 import React, { useState, Component, useEffect } from 'react';
 import { StatusBar, TouchableOpacity, Modal, StyleSheet, View, Text, Dimensions, Linking, PermissionsAndroid, Platform } from 'react-native';
 import {
-    LegendsDetalhes, TabsContainer2, Slider, Space, CaixaNome, Legends, Legends2,
+    LegendsDetalhes, TabsContainer2, Slider, Space, CaixaNome, Legends, Legends2, LegendsYellow,
     Legends3, Caixabairro, CaixaPreco, Img, CategoriaProximos, ButtonStyled2, ButtonText2
 } from './styles';
 import Icon from 'react-native-vector-icons/FontAwesome'; Icon.loadFont();
@@ -146,59 +146,60 @@ function Restaurante({ categoriasGeral, dispatch, chave,
 
     async function usarVoucher() {
         if (token) {
-            SetCheckLoad(true)
-            const response = await api.get('/busca/buscaUser.php', { params: { token: chave } })
-                .then(async data => {
-                    var dadosCompra = data.data;
-                    var Session = dadosCompra.session;
-                    var FimDoPlano = (dadosCompra?.tempoPacote)?.split(" ")[0];
-                    var FimDoPlano = FimDoPlano == undefined ? (0) : (new Date(FimDoPlano));
-                    var InicioDoPlano = (dadosCompra?.dataPacote)?.split(" ")[0];
-                    var InicioDoPlano = InicioDoPlano == undefined ? (0) : (new Date(InicioDoPlano));
+            if (isActive == 2 || isActive == '2') {
+                SetCheckLoad(true)
+                const response = await api.get('/busca/buscaUser.php', { params: { token: chave } })
+                    .then(async data => {
+                        var dadosCompra = data.data;
+                        var Session = dadosCompra.session;
+                        var FimDoPlano = (dadosCompra?.tempoPacote)?.split(" ")[0];
+                        var FimDoPlano = FimDoPlano == undefined ? (0) : (new Date(FimDoPlano));
+                        var InicioDoPlano = (dadosCompra?.dataPacote)?.split(" ")[0];
+                        var InicioDoPlano = InicioDoPlano == undefined ? (0) : (new Date(InicioDoPlano));
 
-                    var DataDeHoje = new Date();
-                    if (FimDoPlano > DataDeHoje) {
-                        var timeDiff = Math.abs(InicioDoPlano.getTime() - DataDeHoje.getTime());
-                        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-                        diffDays = Math.floor(diffDays / 183);
-                        if (diffDays != Session) {
-                            Session = diffDays;
-                            const response = await api.get('/busca/alteraSession.php',
-                                { params: { token: chave, session: Session } }).then(data2 => {
+                        var DataDeHoje = new Date();
+                        if (FimDoPlano > DataDeHoje) {
+                            var timeDiff = Math.abs(InicioDoPlano.getTime() - DataDeHoje.getTime());
+                            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                            diffDays = Math.floor(diffDays / 183);
+                            if (diffDays != Session) {
+                                Session = diffDays;
+                                const response = await api.get('/busca/alteraSession.php',
+                                    { params: { token: chave, session: Session } }).then(data2 => {
 
+                                    })
+                            }
+                            setSession(Session);
+                            usarVoucher2();
+                            SetCheckLoad(false)
+                        } else {
+                            ////////BUSCAR PAGSEGURO PARA VER SE RENOVOU OU CANCELOU
+                            const response = await api.get('/busca/verificarStatusPagSeguro.php',
+                                { params: { token: chave } }).then(async data2 => {
+                                    var status = data2.data.status;
+                                    if (status != "ACTIVE") {
+                                        const response = await api.get('/busca/alteraDataPlano.php',
+                                            { params: { token: chave } }).then(data2 => {
+
+                                                setSession(Session);
+                                                usarVoucher2();
+                                                SetCheckLoad(false);
+
+                                            })
+                                    } else {
+                                        Toast.show('O seu plano não foi renovado');
+                                        SetCheckLoad(false)
+                                    }
                                 })
                         }
-                        setSession(Session);
-                        usarVoucher2();
-                        SetCheckLoad(false)
-                    } else {
-                        ////////BUSCAR PAGSEGURO PARA VER SE RENOVOU OU CANCELOU
-                        const response = await api.get('/busca/verificarStatusPagSeguro.php',
-                            { params: { token: chave } }).then(async data2 => {
-                                var status = data2.data.status;
-                                if (status != "ACTIVE") {
-                                    console.log(FimDoPlano);
-                                    const response = await api.get('/busca/alteraDataPlano.php',
-                                        { params: { token: chave } }).then(data2 => {
-                                            console.log(data2.data);
-                                            if (data2.data == 1) {
-                                                Toast.show('Falha - tente novamente.');
-                                            } else {
-                                                Toast.show('Falha - verifique com suporte');
-                                            }
-
-                                        })
-                                    SetCheckLoad(false)
-                                } else {
-                                    Toast.show('O seu plano não foi renovado');
-                                    SetCheckLoad(false)
-                                }
-                            })
-                    }
-                })
+                    })
+            } else {
+                Toast.show('Assine nossos palnos e aproveite');
+                SetCheckLoad(false)
+            }
         } else {
             setModalState(false)
-            navigation.navigate("PerfilInterno");
+            navigation.navigate("Perfil");
         }
     }
     function usarVoucher2() {
@@ -208,7 +209,7 @@ function Restaurante({ categoriasGeral, dispatch, chave,
     function goToLogin() {
         console.log("---------")
         setModalState(false);
-        navigation.navigate("PerfilInterno");
+        navigation.navigate("Perfil");
     }
 
     return (
@@ -277,9 +278,16 @@ function Restaurante({ categoriasGeral, dispatch, chave,
                     </CaixaNome>
                     <Caixabairro >
                         <Legends2>{categoriasGeral}</Legends2>
+                        <Legends2> | Bairro: {itemState.bairro}</Legends2>
                     </Caixabairro>
                     <Caixabairro >
-                        <Legends2>{itemState.bairro}</Legends2>
+
+                        {itemState.type == 1 ? (
+                            <LegendsYellow>Tipo: Comida em Dobro</LegendsYellow>
+                        ) : (
+                            <LegendsYellow>Tipo: Cupons Ilimitados</LegendsYellow>
+                        )}
+
                     </Caixabairro>
                     <View style={styles.redesSociais2}>
                         {token.length == 0 ? (
@@ -304,9 +312,6 @@ function Restaurante({ categoriasGeral, dispatch, chave,
                             </>
                         )
                     )}
-                    <TabsContainer2>
-                        <LegendsDetalhes>BENEFÍCIOS</LegendsDetalhes>
-                    </TabsContainer2>
                     <View style={styles.checkin}>
                         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
                             <Icon name="ticket" size={20} style={styles.iconInfo}>
